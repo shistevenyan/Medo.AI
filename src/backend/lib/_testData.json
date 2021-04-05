@@ -1,0 +1,19 @@
+{
+    "users": [{
+        "id": "bob",
+        "password": "R8vrc7gwCcYGc6565fmY2oqQRsGP3dqgKg0ySN8IQ2Wmthb7wqvSF4FIZnYnpOQkDUJw8ydKE+nlyVuUGmALlM/2pQ1DFbVpDB9WE1qrPmck+YUZ3njM1p5ueOsWD43wmWUf8BQd726GZhRBSq4F7oNruRGoowXlh3rsMoMXzjH3KyIuQ6oS/CMg0aFyxG00G0pzJ8bUYfEekS9euPyEwLQ3O5EnINEsC/zTUqCheV9ZxW0UnGcwhDg+8txXjfMvN4J/ZYF+T6ye9knUpWohcPm8zhPnMgC+HxrXVucaDIgYdpw8jGVHSWFHF14U06uTZW2IgVCE489I76FCEuydEo3QoVsicC9FFf7yD6icDc4gBe8Q0QMdJxNVY50i9WgkGyIA94zXvYBLD97W2OmeX2obxyLFkchAcjydmn2/G6pgrNB4zZSY4NSxbj1476WsqcXW0VLG/iihWrNeGlcFXhM1oQMReONa/n8VcTFO+MeYm7Mmxyln56Wks3ihjbOPX/LuWE7ObpfxDOlEoG3wvIsKud0ws34t+JbXelB7sS2ZTlMyB1DeODWJ0LovhLUdynZehHDMKgv9vWd11vfCzjNmb+8q4/voqaMNNbtkCyv5OhDg0ILhcylHs4JgIyVDXaTRXCzka86IRcv++Dq8LzIUT/HLIOWLnExkAH6c6QA="
+    }, {
+        "id": "jim",
+        "password": "Mtsjpp8JL3UL5Weqa/iJ1b4oldNCrY1wmNsyVgZyYXK8/m38Lwk4iYrSzQnJ8vcnjTY8/6iGyePeeZw6FfGY/tw+3mqphVZFVM76nj4cOb8yRljwHNpZUqCCJu9W7jOQxix3Io0WS86a5/2vyJQTKB9Z8Sy8MqsMIPSbtEwAn3Xn48Hpx8WXgPJ/GhrcGCo8+FFwGTfLRV2RPlfNS9IMrjiUKmYed4YXVsLWjvVCjtovt7++cwfYmWz+CfONCsLWKzVjdL81cM8ppz5hXzTu/TJCYoQh6mDcRzL/Dtwaiw8d1WdjLFgdH3MzihDU+NvmhxJAjF3cNAvX3ghGln8h5LyApfcQDLg/AuwPRDIIkOBWvKEb/s1lRB0gsAqBPQ2pkN6ijaS4cscbs8/NTZpz7mwCLwzkmFChbdXa6rHqtAGFIDesURyMAkvSwmUTNYNqm6cwwkiHZUHY+JB8DKl+xWc5bxH+z9JhzGGTl5l44S6oHASg2Vi5t15b4sZu+yboheaw0taTRxZGqIjk00BaIjKXB1eiWaQEd7jRYgzUxMDSoAMLGv/gHkxazND7xQc5wo4sCgysuPSGLfDSKQ8KrVJ2a5hg0hsu4NhsbcS0jzTormNWmVMOT1LxVHGTx+Na106snCYVjj7g7+W2Khr9NX7ACRP94Oh0K3gUAbJU2ug="
+    }],
+
+    "patients": [{
+        "id": "larry",
+        "name": "Larry",
+        "ahcNum": "12356789"
+    }, {
+        "id": "darryl",
+        "name": "Darryl",
+        "ahcNum": "12356788"
+    }]
+}
