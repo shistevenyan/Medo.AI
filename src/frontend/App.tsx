@@ -57,5 +57,6 @@ export default class App extends React.Component<{}, {
         this.setState({
             token
         });
+        window.location = window.location;
     }
 }

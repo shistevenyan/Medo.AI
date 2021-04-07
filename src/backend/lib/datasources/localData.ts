@@ -21,8 +21,10 @@ export default class LocalData extends DataSource {
     }
 
     public async saveData(type: EntityType, id: string, data: any) {
-        this.coll(type)[id] = data;
+        delete this.coll(type)[id];
+        this.coll(type)[data.id] = data;
         this.saveColl(type);
+        this.log.info(this.coll(type));
     }
     public async deleteData(type: EntityType, id: string) {
         delete this.coll(type)[id];

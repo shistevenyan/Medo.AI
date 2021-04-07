@@ -127,11 +127,13 @@ export default class App {
         if (!user) {
             res.status(401).send({
                 // QUESTION: Is this a good message
+                // not good, the messages be more vague, right now too specific 
                 message: "User with id not found"
             });
         } else {
             // QUESTION: Is this really a good way to verify passwords?
             const decrypted = await Util.decrypt(user.password);
+            Log.info(decrypted);
             if (decrypted !== body.password) {
                 res.status(401).send({
                     message: "Invalid password"

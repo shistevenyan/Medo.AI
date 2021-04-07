@@ -13,6 +13,7 @@ const PRIVATE_KEY = fs.readFileSync(PRIVATE_KEY_PATH);
 export default {
     decrypt: async (base64Enc: string) => {
         // QUESTION: What are these encodings for?
+        // why encode base 64, asymmetric encryption
         const decrypted = crypto.publicDecrypt(PUBLIC_KEY,
             Buffer.from(base64Enc, "base64")).toString("utf8");
         return decrypted;

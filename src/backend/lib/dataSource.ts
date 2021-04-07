@@ -2,6 +2,7 @@ import Logger, { Log } from "./logger";
 export type EntityType = "patient";
 
 // QUESTION: Why have different implementations of DataSource?
+//polymorphism vs. inheritance vs. abstraction vs. incapsulation
 // QUESTION: What do abstract, private, protected, public, async mean?
 export default abstract class DataSource {
     protected readonly log: Log;

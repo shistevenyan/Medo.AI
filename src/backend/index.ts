@@ -6,8 +6,8 @@ import App from "./lib/app";
 const Log = Logger.getLog("Main");
 
 
-const DATA_SOURCE = process.env.DATA_SOURCE;
 
+const DATA_SOURCE = process.env.DATA_SOURCE;
 if (!DATA_SOURCE) {
     Log.info("No 'DATA_SOURCE' environment variable set, using InMemory");
 }

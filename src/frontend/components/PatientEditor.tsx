@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 export default class PatientEditor extends React.Component<{
-    handleSaved: () => void,
+    handleSaved: (newPatientId: string, oldPatientId: string ) => void,
     token: string,
     patientId: string | null
 }, {
@@ -88,7 +88,7 @@ export default class PatientEditor extends React.Component<{
             this.setState({
                 message: undefined
             });
-            this.props.handleSaved();
+            this.props.handleSaved(this.state.id, this.props.patientId!);
         }).catch((err) => {
             const res = err.response;
             this.setState({

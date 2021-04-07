@@ -40,6 +40,7 @@ var path_1 = require("path");
 var fs_1 = require("fs");
 var crypto_1 = require("crypto");
 // QUESTION: Why use Path here?
+// why not just append the 3 together?
 var PUBLIC_KEY_PATH = path_1["default"].join(process.cwd(), "certs", "public.crt");
 var PRIVATE_KEY_PATH = path_1["default"].join(process.cwd(), "certs", "private.key");
 // QUESTION: Can we use aynchronous read?

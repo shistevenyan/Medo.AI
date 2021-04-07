@@ -1,4 +1,5 @@
 import DataSource, { EntityType } from "../dataSource";
+import { Log } from "../logger";
 const COLLS: { [key: string]: any } = {};
 export default class InMemory extends DataSource {
     constructor() {
@@ -14,7 +15,9 @@ export default class InMemory extends DataSource {
     }
 
     public async saveData(type: EntityType, id: string, data: any) {
-        this.coll(type)[id] = data;
+        delete this.coll(type)[id];
+        this.coll(type)[data.id] = data;
+        this.log.info(this.coll(type));
     }
     public async deleteData(type: EntityType, id: string) {
         delete this.coll(type)[id];

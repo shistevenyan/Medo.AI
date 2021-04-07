@@ -14,9 +14,11 @@ export class Log {
 
     private log(level: "info" | "error", args: []) {
         // TODO timestamps, formatting
+        var d = new Date();
+        var time = d.getTime();
 
         // tslint:disable-next-line
-        console.log.apply(null, [level.toUpperCase(), `[${this.name}]`, ...args]);
+        console.log.apply(null, [time, level.toUpperCase(), `[${this.name}]`, ...args]);
     }
 }
 
