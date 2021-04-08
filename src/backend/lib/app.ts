@@ -28,6 +28,8 @@ export default class App {
         // QUESTION: Does the order of the following calls matter?
         this.addUiHandler(exp);
         this.addApiEndpoints(exp);
+        
+        
     }
 
     public start() {
@@ -127,11 +129,12 @@ export default class App {
         if (!user) {
             res.status(401).send({
                 // QUESTION: Is this a good message
-                // not good, the messages be more vague, right now too specific 
+                // not good, the messages should be more vague, right now too specific 
                 message: "User with id not found"
             });
         } else {
             // QUESTION: Is this really a good way to verify passwords?
+            // it is not, can be cracked, maybe use hashing?
             const decrypted = await Util.decrypt(user.password);
             Log.info(decrypted);
             if (decrypted !== body.password) {
@@ -153,6 +156,7 @@ export default class App {
         const id = req.params["id"];
         const body = req.body;
         // QUESTION: Is AHC Number or name sensitive data?
+        // how come no body.id? is it not changable?
         if (!body.name || !body.ahcNum) {
             res.status(400).send({
                 message: "name and ahcNum are required"
