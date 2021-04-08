@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from "react";
 import axios from "axios";
 import PatientEditor from "./PatientEditor";
@@ -52,6 +51,7 @@ export default class PatientList extends React.Component<{ token: string },
                 let newPatients = prevState.patients.filter(patient => patient.id != oldPatientId);
                 newPatients.push(res.data);
                 return {
+                    patientId: undefined,
                     patients: newPatients
                 }
             })
@@ -62,11 +62,14 @@ export default class PatientList extends React.Component<{ token: string },
         if (this.state.patientId) {
             return <PatientEditor token={this.props.token}
                 patientId = {this.state.patientId}
-                handleSaved={(newPatientId, oldPatientId) => {
-                    
+                handleSaved={(newPatientId, oldPatientId) => { 
                     // TODO: Reload patient list
                     this.reloadPatientData(newPatientId, oldPatientId);
+                }}
+                
+                handleCancel={() => {
                     this.setState({
+                        ...this.state,
                         patientId: undefined
                     });
                 }}

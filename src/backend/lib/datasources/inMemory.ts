@@ -1,6 +1,6 @@
 import DataSource, { EntityType } from "../dataSource";
 import { Log } from "../logger";
-const COLLS: { [key: string]: any } = {};
+
 export default class InMemory extends DataSource {
     constructor() {
         super("InMemory");
@@ -24,9 +24,9 @@ export default class InMemory extends DataSource {
     }
 
     private coll(type: EntityType) {
-        if (!COLLS[type]) {
-            COLLS[type] = {};
+        if (!this.COLLS[type]) {
+            this.COLLS[type] = {};
         }
-        return COLLS[type];
+        return this.COLLS[type];
     }
 }

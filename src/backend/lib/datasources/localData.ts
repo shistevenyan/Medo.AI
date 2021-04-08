@@ -4,7 +4,7 @@ import fs from "fs";
 import shelljs from "shelljs";
 
 const DATA_DIR = Path.join(process.cwd(), "private", "data");
-const COLLS: { [key: string]: any } = {};
+
 
 export default class LocalData extends DataSource {
     constructor() {
@@ -38,15 +38,15 @@ export default class LocalData extends DataSource {
     }
 
     private coll(type: EntityType) {
-        if (!COLLS[type]) {
+        if (!this.COLLS[type]) {
             const dataFile = Path.join(DATA_DIR, type + ".json");
             if (fs.existsSync(dataFile)) {
                 this.log.info("Reading file", dataFile);
-                COLLS[type] = JSON.parse(fs.readFileSync(dataFile).toString("utf8"));
+                this.COLLS[type] = JSON.parse(fs.readFileSync(dataFile).toString("utf8"));
             } else {
-                COLLS[type] = {};
+                this.COLLS[type] = {};
             }
         }
-        return COLLS[type];
+        return this.COLLS[type];
     }
 }

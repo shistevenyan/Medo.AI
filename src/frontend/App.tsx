@@ -19,17 +19,19 @@ export default class App extends React.Component<{}, {
         if (!this.state.token) {
             return <Login handleLoggedIn={this.handleLoggedIn.bind(this)} />;
         }
-        return <div>
-            <button className="btn btn-default"
-                onClick={this.reload.bind(this)}>
-                Reload Data
-            </button>
-            <button className="btn btn-default"
-                onClick={this.logout.bind(this)}>
-                Logout
-            </button>
-            <PatientList token={this.state.token} />
-        </div>;
+        return (
+            <div>
+                <button className="btn btn-default"
+                    onClick={this.reload.bind(this)}>
+                    Reload Data
+                </button>
+                <button className="btn btn-default"
+                    onClick={this.logout.bind(this)}>
+                    Logout
+                </button>
+                <PatientList token={this.state.token} />
+            </div>
+        );
     }
 
     private logout() {
@@ -57,6 +59,5 @@ export default class App extends React.Component<{}, {
         this.setState({
             token
         });
-        window.location = window.location;
     }
 }

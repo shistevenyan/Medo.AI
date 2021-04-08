@@ -4,6 +4,7 @@ import "../styles/PatientEditor.css";
 
 export default class PatientEditor extends React.Component<{
     handleSaved: (newPatientId: string, oldPatientId: string ) => void,
+    handleCancel: () => void,
     token: string,
     patientId: string | null
 }, {
@@ -52,7 +53,7 @@ export default class PatientEditor extends React.Component<{
                     className="form-control" onChange={this.updateAhc.bind(this)} />
                 <div id="button-container">
                     <button className="btn btn-success" onClick={this.handleSave.bind(this)}>Save</button>
-                    <button className="btn btn-danger" onClick={this.handleCancel.bind(this)}>Cancel</button>
+                    <button className="btn btn-danger" onClick={this.props.handleCancel.bind(this)}>Cancel</button>
                 </div>
                 
             </div>
@@ -104,7 +105,4 @@ export default class PatientEditor extends React.Component<{
         });
     }
 
-    private handleCancel() {
-        window.location = window.location;
-    }
 }
