@@ -2,6 +2,7 @@
 import React from "react";
 import axios from "axios";
 import PatientEditor from "./PatientEditor";
+import "../styles/PatientList.css";
 
 
 interface Patient {
@@ -62,21 +63,24 @@ export default class PatientList extends React.Component<{ token: string },
             return <PatientEditor token={this.props.token}
                 patientId = {this.state.patientId}
                 handleSaved={(newPatientId, oldPatientId) => {
-                    this.reloadPatientData(newPatientId, oldPatientId);
+                    
                     // TODO: Reload patient list
-                    // this.setState({
-                    //     patientId: undefined
-                    // });
+                    this.reloadPatientData(newPatientId, oldPatientId);
+                    this.setState({
+                        patientId: undefined
+                    });
                 }}
             />;
         }
         return <div className="patients">
-            <h4>Patients</h4>
+            <h4 id="patient-header">Patients</h4>
             <table className="table">
+                
                 <tbody>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Alberta Health Care #</th>
                         <th></th>
                     </tr>
                     {this.buildRows()}
@@ -96,8 +100,9 @@ export default class PatientList extends React.Component<{ token: string },
             return <tr key={p.id}>
                 <td>{p.id}</td>
                 <td>{p.name}</td>
+                <td>{p.ahcNum}</td>
                 <td>
-                    <button onClick={oc} className="btn btn-default">
+                    <button onClick={oc} className="btn btn-danger">
                     Edit
                     </button>
                 </td>

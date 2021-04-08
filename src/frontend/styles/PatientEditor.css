@@ -1,0 +1,11 @@
+#editor-container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-top: 30px;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "../styles/PatientEditor.css";
 
 export default class PatientEditor extends React.Component<{
     handleSaved: (newPatientId: string, oldPatientId: string ) => void,
@@ -40,16 +41,22 @@ export default class PatientEditor extends React.Component<{
         const msgElement = this.state.message ?
             <div className="alert alert-primary">{this.state.message}</div> :
             null;
-        return <div>
-            {msgElement}
-            <input type="text" placeholder="ID" value={this.state.id}
-                className="form-control" onChange={this.updateId.bind(this)} />
-            <input type="text" placeholder="Name" value={this.state.name}
-                className="form-control" onChange={this.updateName.bind(this)} />
-            <input type="text" placeholder="AHC #" value={this.state.ahcNum}
-                className="form-control" onChange={this.updateAhc.bind(this)} />
-            <button className="btn btn-primary" onClick={this.handleSave.bind(this)}>Save</button>
-        </div>;
+        return (
+            <div id="editor-container">
+                {msgElement}
+                <input type="text" placeholder="ID" value={this.state.id}
+                    className="form-control" onChange={this.updateId.bind(this)} />
+                <input type="text" placeholder="Name" value={this.state.name}
+                    className="form-control" onChange={this.updateName.bind(this)} />
+                <input type="text" placeholder="AHC #" value={this.state.ahcNum}
+                    className="form-control" onChange={this.updateAhc.bind(this)} />
+                <div id="button-container">
+                    <button className="btn btn-success" onClick={this.handleSave.bind(this)}>Save</button>
+                    <button className="btn btn-danger" onClick={this.handleCancel.bind(this)}>Cancel</button>
+                </div>
+                
+            </div>
+        );
     }
 
     private updateAhc(evt: React.ChangeEvent<HTMLInputElement>) {
@@ -95,5 +102,9 @@ export default class PatientEditor extends React.Component<{
                 message: res.data.message || res.statusText
             });
         });
+    }
+
+    private handleCancel() {
+        window.location = window.location;
     }
 }

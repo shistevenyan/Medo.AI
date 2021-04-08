@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "../styles/Login.css";
 
 export default class Login extends React.Component<{
     handleLoggedIn: (token: string) => void
@@ -21,14 +22,22 @@ export default class Login extends React.Component<{
         const msgElement = this.state.message ?
             <div className="alert alert-primary">{this.state.message}</div> :
             null;
-        return <div>
-            {msgElement}
-            <input type="text" placeholder="ID" value={this.state.id}
-                className="form-control" onChange={this.updateId.bind(this)} />
-            <input type="password" placeholder="Password" value={this.state.password}
-                className="form-control"  onChange={this.updatePw.bind(this)} />
-            <button className="btn btn-primary" onClick={this.handleLogin.bind(this)}>Login</button>
-        </div>;
+        return (
+            <div id="parent-container">
+                <div id="login-container">
+                    
+                    <span id="login-header"> Medo Playground </span>
+                    <input type="text" placeholder="ID" value={this.state.id}
+                        className="form-control" onChange={this.updateId.bind(this)} />
+
+                    <input type="password" placeholder="Password" value={this.state.password}
+                        className="form-control"  onChange={this.updatePw.bind(this)} />
+
+                    <button className="sign-button" onClick={this.handleLogin.bind(this)}>Login</button>
+                    {msgElement}
+                </div>
+            </div>
+        );
     }
 
     private updateId(evt: React.ChangeEvent<HTMLInputElement>) {
