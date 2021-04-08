@@ -14,6 +14,7 @@ export default {
     decrypt: async (base64Enc: string) => {
         // QUESTION: What are these encodings for?
         // why encode base 64, asymmetric encryption
+        // Base-64 encoding is a way of taking binary data and turning it into text so that it's more easily transmitted in things like e-mail and HTML form data.
         const decrypted = crypto.publicDecrypt(PUBLIC_KEY,
             Buffer.from(base64Enc, "base64")).toString("utf8");
         return decrypted;

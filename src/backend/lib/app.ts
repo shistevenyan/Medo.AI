@@ -15,6 +15,7 @@ const Log = Logger.getLog("App");
 
 type Handler = (req: Request, res: Response, next?: NextFunction) => Promise<void>;
 
+
 export default class App {
     private readonly tokens: string[] = [];
     private readonly httpServer: Http.Server;
@@ -26,9 +27,9 @@ export default class App {
         }));
         this.httpServer = Http.createServer(exp);
         // QUESTION: Does the order of the following calls matter?
+        // 401 error, from addAPIEndpoint, exp.use, this.isTokenValid(req)
         this.addUiHandler(exp);
-        this.addApiEndpoints(exp);
-        
+        this.addApiEndpoints(exp);      
         
     }
 
